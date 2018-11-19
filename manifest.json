@@ -1,0 +1,30 @@
+{
+	"name": "jx3 grab and active code",
+	"description": "jx3 grab and active code.",
+	"browser_action": {
+		"default_icon": "icon16.png" ,
+		"default_title": "jx3 grab and active code"//,
+		//"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"js": [
+				"content_script.js"
+			],
+			"matches": [
+				"http://*/*",
+				"https://*/*"
+			]
+		}
+	],
+	"background": {
+		//"page":"background.html",
+		"scripts": [
+			"jquery-1.11.1.min.js",
+			"bk.js"
+		]
+	},
+
+	"version": "1.7",
+	"manifest_version": 2
+} 

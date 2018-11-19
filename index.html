@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>jx3 grab and active code</title>
+    <script src="jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" charset="utf-8" src='main.js'></script> 
+	
+</head>
+<body>
+<div>
+	<div style="border:1px solid #000; margin:10px; padding: 5px;display: none;">
+		<div style="width: 100%;height: 30px;">
+			<div style="float: left;width: 40px;">Id:</div>
+			<input style="float: left;" id="U9id" />
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<button id="U9Get" >U9 Get</button>
+		</div>
+	</div>
+	
+	<div style="border:1px solid #000; margin:10px; padding: 5px;">
+		<div style="width: 100%;height: 30px;">
+			<div style="float: left;width: 40px;">JQuery:</div>
+			<input style="float: left;" id="JQueryNum" />
+			<div style="float: left;width: 40px;">答案:</div>
+			<input style="float: left;" id="answer" />
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<button id="send3Min" >自动答题抢码，务必先登录</button>
+			<button id="stopSend3Min" >停止抢码</button>
+			<button id="autoGrab" >预设答案直接抢码，务必先登录</button>
+			<button id="stopAutoGrab" >停止抢码</button>
+			<button id="clearLog" >清空日志</button>
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<div style="float: left;width: 40px;">Code:</div>
+			<input style="float: left;width: 800px;" id="Code" />
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<button style="float: left;" id="activeCode" >激活</button>
+			<button style="float: left;" id="activeCodeEx" >激活</button>
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<div style="float: left;width: 40px;">Index:</div>
+			<input style="float: left;width: 800px;" id="index" />
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<button style="float: left;" id="autoActiveCode" >枚举激活</button>
+			<button style="float: left;" id="stopAutoActiveCode" >停止枚举激活</button>
+		</div>
+		<div style="width: 100%;">
+			<div id="grabCodeText" style="color: red;padding: 5px;" status="-1"></div>
+		</div>
+	</div>
+
+	<div style="border:1px solid #000; margin:10px; padding: 5px;">
+		<div id="Tips" style="width: 100%;height: 300px;overflow: scroll;">
+		</div>
+	</div>
+	
+	<div style="border:1px solid #000; margin:10px; padding: 5px;display: none;">
+		<div style="width: 100%;height: 30px;">
+			<div style="float: left;width: 40px;">Code:</div>
+			<input style="float: left;" id="code" />
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<button id="send" >激活</button>
+		</div>
+	</div>
+	
+	<div style="border:1px solid #000; margin:10px; padding: 5px; display: none;">
+		<div style="width: 100%;height: 30px;">
+			<div style="float: left;width: 40px;">Code:</div>
+			<input style="float: left;" id="code" />
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<button id="autoSend" >自动激活</button>
+		</div>
+	</div>
+	
+	<div style="border:1px solid #000; margin:10px; padding: 5px;display: none;">
+		<div style="width: 100%;height: 30px;">
+			<button id="17173Get" style="float: left;">自动获取17173网激活码</button>
+			<button id="17173GetStop" style="float: left;">停止获取17173网激活码</button>
+			
+		</div>
+	</div>
+	
+	<div style="border:1px solid #000; margin:10px; padding: 5px;display: none;">
+		<div style="width: 100%;height: 30px;">
+			<button id="duowanGet" style="float: left;">自动获取多玩网激活码</button>
+			<button id="duowanGetStop" style="float: left;">停止获取顺玩网激活码</button>
+			<div id="duowanGetText" style="float: left;width: 200px;color: red;padding: 5px;"></div>
+		</div>
+	</div>
+	
+	<div style="border:1px solid #000; margin:10px; padding: 5px;display: none;">
+		<div style="width: 100%;height: 30px;">
+			<button id="shunwangGet" style="float: left;">自动获取顺玩网激活码</button>
+			<button id="shunwangGetStop" style="float: left;">停止获取顺玩网激活码</button>
+			<div id="shunwangGetText" style="float: left;width: 200px;color: red;padding: 5px;"></div>
+		</div>
+	</div>
+	
+	<div style="border:1px solid #000; margin:10px; padding: 5px;display: none;">
+		<div style="width: 100%;height: 30px;">
+			<input style="float: left;" id="codeText" />
+			
+		</div>
+		
+	</div>
+	
+	<div style="border:1px solid #000; margin:10px; padding: 5px;display: none;">
+		<div style="width: 100%;">
+			<button id="clearData" style="float:lleft;margin-left: 5px;">清空所有激活码</button>
+			<button id="showData" style="float:lleft;margin-left: 5px;">显示所有激活码</button>
+			<button id="showDataStatus" style="float:lleft;margin-left: 5px;">显示激活码状态</button>
+			<button id="activeCode" style="float:lleft;margin-left: 5px;">逐个激活所有激活码</button>
+			<button id="stopActiveCode" style="float:lleft;margin-left: 5px;">停止激活</button>
+			<button id="resetCode" style="float:lleft;margin-left: 5px;">重置激活码激活状态</button>
+		</div>
+		<div style="width: 100%;height: 30px;">
+			<div id="dataTips" style="height: 30px;color: red;padding: 5px;"></div>
+		</div>
+		<textarea id="codeData" rows="10" cols="30" readonly="readonly" style="display: block;">
+		</textarea>
+		
+		
+	</div>
+	
+
+	
+	
+	
+</div>
+
+
+
+
+</body>
+</html>
